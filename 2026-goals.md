@@ -36,7 +36,7 @@
 - Do annual dr check up and dental visit
 - Improve VO₂ max (as measured by Apple Watch)
 - Walk perimiter of Manhattan
-- Bike (or [unicycle](https://youtu.be/afmaWLF03n8?si=geHr9I2iUy86qpq7)) up to Canada (a poetic tie in with citizenship)
+- Bike (or [unicycle](https://youtu.be/afmaWLF03n8)) up to Canada (a poetic tie in with citizenship)
 - Learn Spanish
 - More major trips, including friends & family (see **Destinations** below)
 - Learn about living off of, and understanding, the Earth (inspired by [Tom Wessels](https://www.youtube.com/watch?v=zcLQz-oR6sw))
