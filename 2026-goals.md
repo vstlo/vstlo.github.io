@@ -71,8 +71,7 @@
 - Japan
 - More South & Central America
 
-### Quotes going into 2026
-
+### Ideas going into 2026
 >"The act of creation is the only thing that justifies existence." – unknown
 
 >"Systems (process oriented goals) over outcome goals." – me
