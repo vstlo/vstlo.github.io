@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Username Generator</title>
+    <style>
+      :root {
+        --bg: #f6f0e8;
+        --panel: #fffdf9;
+        --ink: #2b2b2b;
+        --muted: #6b645a;
+        --accent: #9e4d2f;
+        --accent-2: #3e6d6a;
+        --border: #d8cbb9;
+        --shadow: 0 12px 30px rgba(20, 14, 8, 0.08);
+        --radius: 14px;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: var(--ink);
+        background: radial-gradient(1200px 700px at 10% -10%, #fdf7ef 0%, var(--bg) 60%, #efe3d2 100%);
+      }
+      header {
+        padding: 28px 20px 10px;
+        text-align: center;
+      }
+      header h1 {
+        margin: 0 0 8px;
+        font-family: "IBM Plex Serif", "Georgia", serif;
+        font-size: clamp(26px, 3vw, 34px);
+        letter-spacing: 0.5px;
+      }
+      header p {
+        margin: 0 auto;
+        color: var(--muted);
+        max-width: 520px;
+      }
+      main {
+        max-width: 1080px;
+        margin: 18px auto 40px;
+        padding: 0 20px 30px;
+        display: grid;
+        gap: 20px;
+      }
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+      .grid {
+        display: grid;
+        gap: 14px;
+      }
+      .grid.two { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+      .grid.three { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+      .section-title {
+        font-weight: 600;
+        font-size: 15px;
+        color: var(--muted);
+        margin: 6px 0 4px;
+      }
+      label {
+        font-weight: 600;
+        font-size: 14px;
+        display: block;
+        margin-bottom: 4px;
+      }
+      .label-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 6px;
+      }
+      .subtext {
+        font-size: 12px;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+      .info-button {
+        position: relative;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        border: 1px solid var(--border);
+        background: #f4ede4;
+        color: var(--accent);
+        font-size: 11px;
+        line-height: 1;
+        cursor: pointer;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .info-button:focus {
+        outline: 2px solid var(--accent-2);
+        outline-offset: 2px;
+      }
+      .info-button::after {
+        content: attr(data-tip);
+        position: absolute;
+        bottom: calc(100% + 10px);
+        left: 50%;
+        transform: translateX(-50%);
+        background: #fff;
+        color: var(--ink);
+        padding: 8px 10px;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        width: max-content;
+        max-width: 220px;
+        font-size: 12px;
+        line-height: 1.3;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.15s ease;
+        z-index: 5;
+        white-space: normal;
+      }
+      .info-button::before {
+        content: "";
+        position: absolute;
+        bottom: calc(100% + 2px);
+        left: 50%;
+        transform: translateX(-50%);
+        border: 6px solid transparent;
+        border-top-color: #fff;
+        opacity: 0;
+        transition: opacity 0.15s ease;
+      }
+      .info-button:hover::after,
+      .info-button:focus::after,
+      .info-button.info-open::after,
+      .info-button:hover::before,
+      .info-button:focus::before,
+      .info-button.info-open::before {
+        opacity: 1;
+      }
+      input[type="text"],
+      input[type="number"],
+      textarea {
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        background: #fff;
+        font-size: 14px;
+      }
+      textarea { min-height: 70px; resize: vertical; }
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .pill {
+        background: #efe4d5;
+        border-radius: 999px;
+        padding: 4px 10px;
+        font-size: 12px;
+        color: var(--muted);
+        display: inline-flex;
+        align-items: center;
+      }
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      button {
+        background: var(--accent);
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        padding: 10px 18px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      button.secondary {
+        background: var(--accent-2);
+      }
+      .icon-button {
+        background: #f1e8dc;
+        color: var(--accent-2);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 6px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      .icon-button svg {
+        width: 16px;
+        height: 16px;
+        stroke: currentColor;
+      }
+      .icon-button.copied {
+        background: var(--accent-2);
+        color: #fff;
+        border-color: var(--accent-2);
+      }
+      .section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+      .section-header h2 {
+        margin: 0;
+        font-size: 16px;
+      }
+      .output {
+        min-height: 180px;
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+        background: #fff;
+        border: 1px solid var(--border);
+        padding: 16px;
+        border-radius: 12px;
+      }
+      .name-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 10px;
+      }
+      .name-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 10px 12px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: #fbf7f1;
+      }
+      .name-text {
+        font-size: 16px;
+        font-weight: 600;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+      }
+      .empty-state {
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .hint {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 6px;
+      }
+      .footer {
+        text-align: center;
+        color: var(--muted);
+        font-size: 12px;
+      }
+      @media (max-width: 720px) {
+        header {
+          padding: 22px 16px 6px;
+        }
+        main {
+          padding: 0 16px 24px;
+        }
+        .panel {
+          padding: 16px;
+        }
+        .grid.two,
+        .grid.three {
+          grid-template-columns: 1fr;
+        }
+        .actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .actions button {
+          width: 100%;
+          padding: 12px 18px;
+        }
+        .section-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .name-list {
+          grid-template-columns: 1fr;
+        }
+        .info-button::after {
+          left: 0;
+          transform: none;
+        }
+        .info-button::before {
+          left: 16px;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Username Generator</h1>
+      <p>Private-by-default name ideas you can tune and bookmark.</p>
+    </header>
+
+    <main>
+      <section class="panel">
+        <div class="section-header">
+          <h2>Generated usernames</h2>
+          <span class="pill" id="resultCountLabel">0 results</span>
+        </div>
+        <div class="output" id="output"></div>
+        <div class="actions" style="margin-top: 16px;">
+          <button id="generate">Regenerate</button>
+          <button id="copy" class="secondary">Copy URL</button>
+          <span class="hint" id="status"></span>
+        </div>
+      </section>
+
+      <section class="panel grid">
+        <div class="section-title">Sound and structure</div>
+        <div class="grid two">
+          <div>
+            <div class="label-row">
+              <label for="templates">Templates</label>
+              <button
+                class="info-button"
+                type="button"
+                aria-label="Templates help"
+                data-tip="Patterns using C for consonants and V for vowels. Separate with commas or spaces."
+              >
+                i
+              </button>
+            </div>
+            <div class="subtext">Comma or space separated</div>
+            <textarea id="templates" placeholder="Enter templates"></textarea>
+            <div class="hint">Use C for consonant, V for vowel.</div>
+          </div>
+          <div>
+            <label for="vowels">Vowels</label>
+            <input id="vowels" type="text" placeholder="Enter vowel set" />
+          </div>
+          <div>
+            <label for="cCommon">Common consonants</label>
+            <input id="cCommon" type="text" placeholder="Enter consonant set" />
+          </div>
+          <div>
+            <div class="label-row">
+              <label for="cEdgy">Edgy consonants</label>
+              <button
+                class="info-button"
+                type="button"
+                aria-label="Edgy consonants help"
+                data-tip="These letters add an edgy score when present."
+              >
+                i
+              </button>
+            </div>
+            <input id="cEdgy" type="text" placeholder="Enter edgy set" />
+          </div>
+          <div>
+            <div class="label-row">
+              <label for="starters">Starter bias letters</label>
+              <button
+                class="info-button"
+                type="button"
+                aria-label="Starter bias letters help"
+                data-tip="Letters that can be forced into the first position when starter bias applies."
+              >
+                i
+              </button>
+            </div>
+            <input id="starters" type="text" placeholder="Enter starter letters" />
+          </div>
+          <div>
+            <div class="label-row">
+              <label for="clusters">Clusters</label>
+              <button
+                class="info-button"
+                type="button"
+                aria-label="Clusters help"
+                data-tip="Letter pairs that boost the score when they appear."
+              >
+                i
+              </button>
+            </div>
+            <div class="subtext">Comma or space separated</div>
+            <input id="clusters" type="text" placeholder="Enter clusters" />
+          </div>
+        </div>
+
+        <div class="section-title">Scoring and limits</div>
+        <div class="grid three">
+          <div>
+            <label for="resultCount">Results to show</label>
+            <input id="resultCount" type="number" min="1" max="200" placeholder="Enter count" />
+          </div>
+          <div>
+            <label for="tries">Max tries</label>
+            <input id="tries" type="number" min="100" max="20000" placeholder="Enter max tries" />
+          </div>
+          <div>
+            <div class="label-row">
+              <label for="minScore">Minimum score</label>
+              <button
+                class="info-button"
+                type="button"
+                aria-label="Minimum score help"
+                data-tip="Only keep results at or above this score."
+              >
+                i
+              </button>
+            </div>
+            <input id="minScore" type="number" min="-5" max="10" placeholder="Enter minimum score" />
+          </div>
+          <div>
+            <div class="label-row">
+              <label for="starterBias">Starter bias probability</label>
+              <button
+                class="info-button"
+                type="button"
+                aria-label="Starter bias probability help"
+                data-tip="Chance to force the first letter to come from the starter set."
+              >
+                i
+              </button>
+            </div>
+            <input id="starterBias" type="number" min="0" max="1" step="0.05" placeholder="Enter probability" />
+          </div>
+          <div>
+            <div class="label-row">
+              <label for="edgyStartBias">Edgy early bias multiplier</label>
+              <button
+                class="info-button"
+                type="button"
+                aria-label="Edgy early bias help"
+                data-tip="Weight edgy consonants higher at the first position."
+              >
+                i
+              </button>
+            </div>
+            <input id="edgyStartBias" type="number" min="1" max="6" step="1" placeholder="Enter multiplier" />
+          </div>
+        </div>
+      </section>
+
+      <div class="footer">Settings live in the URL so you can bookmark a favorite setup.</div>
+    </main>
+
+    <script>
+      const $ = (id) => document.getElementById(id);
+
+      const fields = {
+        templates: $("templates"),
+        vowels: $("vowels"),
+        cCommon: $("cCommon"),
+        cEdgy: $("cEdgy"),
+        starters: $("starters"),
+        clusters: $("clusters"),
+        resultCount: $("resultCount"),
+        tries: $("tries"),
+        minScore: $("minScore"),
+        starterBias: $("starterBias"),
+        edgyStartBias: $("edgyStartBias"),
+      };
+
+      const statusEl = $("status");
+      const outputEl = $("output");
+      const resultCountLabel = $("resultCountLabel");
+
+      const listFromText = (text) =>
+        text
+          .split(/[,\s]+/)
+          .map((s) => s.trim())
+          .filter(Boolean);
+
+      const paramKeys = [
+        "templates",
+        "vowels",
+        "cCommon",
+        "cEdgy",
+        "starters",
+        "clusters",
+        "resultCount",
+        "tries",
+        "minScore",
+        "starterBias",
+        "edgyStartBias",
+      ];
+
+      const setStatus = (message) => {
+        statusEl.textContent = message;
+        if (!message) return;
+        setTimeout(() => { statusEl.textContent = ""; }, 2000);
+      };
+
+      const renderEmpty = (message) => {
+        outputEl.innerHTML = `<div class="empty-state">${message}</div>`;
+        resultCountLabel.textContent = "0 results";
+      };
+
+      const loadFromParams = () => {
+        const params = new URLSearchParams(location.search);
+        let hasParams = false;
+        paramKeys.forEach((key) => {
+          if (params.has(key)) {
+            fields[key].value = params.get(key);
+            hasParams = true;
+          } else {
+            fields[key].value = "";
+          }
+        });
+        return hasParams;
+      };
+
+      const updateParams = () => {
+        const params = new URLSearchParams();
+        paramKeys.forEach((key) => {
+          const value = fields[key].value.trim();
+          if (value) params.set(key, value);
+        });
+        const query = params.toString();
+        const url = query ? `${location.pathname}?${query}` : location.pathname;
+        history.replaceState(null, "", url);
+      };
+
+      const pickConsonant = (common, edgy, edgyStartBias, i = 0) => {
+        const pool = (i === 0 ? edgy.repeat(edgyStartBias) : edgy) + common;
+        return pool[Math.floor(Math.random() * pool.length)];
+      };
+
+      const render = (template, vowels, common, edgy, starters, edgyStartBias, starterBias) => {
+        const chars = [];
+        [...template].forEach((ch, i) => {
+          if (ch === "C") {
+            chars.push(pickConsonant(common, edgy, edgyStartBias, i));
+          } else {
+            chars.push(vowels[Math.floor(Math.random() * vowels.length)]);
+          }
+        });
+        let out = chars.join("");
+        if (starters.length > 0 && Math.random() < starterBias) {
+          const starter = starters[Math.floor(Math.random() * starters.length)];
+          out = starter + out.slice(1);
+        }
+        return out;
+      };
+
+      const score = (name, starters, clusters) => {
+        let sc = 0;
+        if (/[vzxq]/.test(name)) sc += 2;
+        if (starters.includes(name[0])) sc += 1;
+        if (clusters.some((cl) => name.includes(cl))) sc += 1;
+        if (/(.)\1\1/.test(name)) sc -= 5;
+        if (/[aeiou]{3}/.test(name)) sc -= 2;
+        if (/[bcdfghjklmnpqrstvwxyz]{4}/.test(name)) sc -= 2;
+        return sc;
+      };
+
+      const generate = () => {
+        const templates = listFromText(fields.templates.value.toUpperCase());
+        const vowels = listFromText(fields.vowels.value.toLowerCase()).join("");
+        const common = listFromText(fields.cCommon.value.toLowerCase()).join("");
+        const edgy = listFromText(fields.cEdgy.value.toLowerCase()).join("");
+        const starters = listFromText(fields.starters.value.toLowerCase()).join("");
+        const clusters = listFromText(fields.clusters.value.toLowerCase());
+
+        const resultCountRaw = fields.resultCount.value.trim();
+        const triesRaw = fields.tries.value.trim();
+        const minScoreRaw = fields.minScore.value.trim();
+        const starterBiasRaw = fields.starterBias.value.trim();
+        const edgyStartBiasRaw = fields.edgyStartBias.value.trim();
+
+        if (
+          !templates.length ||
+          !vowels ||
+          !common ||
+          !resultCountRaw ||
+          !triesRaw ||
+          !minScoreRaw ||
+          !starterBiasRaw ||
+          !edgyStartBiasRaw
+        ) {
+          renderEmpty("Fill out all fields or load a saved URL to generate.");
+          return;
+        }
+
+        const resultCount = Number(resultCountRaw);
+        const tries = Number(triesRaw);
+        const minScore = Number(minScoreRaw);
+        const starterBias = Number(starterBiasRaw);
+        const edgyStartBias = Math.max(1, Math.round(Number(edgyStartBiasRaw)));
+
+        if (
+          !Number.isFinite(resultCount) ||
+          !Number.isFinite(tries) ||
+          !Number.isFinite(minScore) ||
+          !Number.isFinite(starterBias) ||
+          !Number.isFinite(edgyStartBias)
+        ) {
+          renderEmpty("Check your numeric values, then try again.");
+          return;
+        }
+
+        const seen = new Set();
+        const out = [];
+
+        for (let i = 0; i < tries; i += 1) {
+          const template = templates[Math.floor(Math.random() * templates.length)];
+          const cand = render(template, vowels, common, edgy, starters, edgyStartBias, starterBias);
+          if (seen.has(cand)) continue;
+          seen.add(cand);
+          if (score(cand, starters, clusters) >= minScore) {
+            out.push(cand);
+            if (out.length >= resultCount) break;
+          }
+        }
+
+        if (!out.length) {
+          renderEmpty("No matches. Try lowering the minimum score or increasing max tries.");
+          return;
+        }
+
+        outputEl.innerHTML = `
+          <div class="name-list">
+            ${out
+              .map(
+                (name) => `
+                  <div class="name-item">
+                    <span class="name-text">${name}</span>
+                    <button class="icon-button name-copy" type="button" data-name="${name}" aria-label="Copy ${name}">
+                      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" aria-hidden="true">
+                        <rect x="9" y="9" width="11" height="11" rx="2"></rect>
+                        <rect x="4" y="4" width="11" height="11" rx="2"></rect>
+                      </svg>
+                    </button>
+                  </div>
+                `
+              )
+              .join("")}
+          </div>
+        `;
+        resultCountLabel.textContent = `${out.length} results`;
+      };
+
+      const onChange = () => {
+        updateParams();
+        generate();
+      };
+
+      Object.values(fields).forEach((field) => {
+        field.addEventListener("input", onChange);
+        field.addEventListener("change", onChange);
+      });
+
+      $("generate").addEventListener("click", () => {
+        updateParams();
+        generate();
+      });
+
+      $("copy").addEventListener("click", async () => {
+        updateParams();
+        try {
+          await navigator.clipboard.writeText(location.href);
+          setStatus("URL copied.");
+        } catch (err) {
+          setStatus("Copy failed. You can manually copy from the address bar.");
+        }
+      });
+
+      outputEl.addEventListener("click", async (event) => {
+        const button = event.target.closest(".name-copy");
+        if (!button) return;
+        const name = button.dataset.name;
+        try {
+          await navigator.clipboard.writeText(name);
+          button.classList.add("copied");
+          setStatus(`Copied ${name}.`);
+          setTimeout(() => { button.classList.remove("copied"); }, 900);
+        } catch (err) {
+          setStatus("Copy failed.");
+        }
+      });
+
+      document.addEventListener("click", (event) => {
+        const infoButton = event.target.closest(".info-button");
+        document.querySelectorAll(".info-button.info-open").forEach((btn) => {
+          if (btn !== infoButton) btn.classList.remove("info-open");
+        });
+        if (infoButton) {
+          infoButton.classList.toggle("info-open");
+        }
+      });
+
+      window.addEventListener("popstate", () => {
+        const hasParams = loadFromParams();
+        if (hasParams) {
+          generate();
+        } else {
+          renderEmpty("Fill out all fields or load a saved URL to generate.");
+        }
+      });
+
+      const hasParams = loadFromParams();
+      if (hasParams) {
+        generate();
+      } else {
+        renderEmpty("Fill out all fields or load a saved URL to generate.");
+      }
+    </script>
+  </body>
+</html>
