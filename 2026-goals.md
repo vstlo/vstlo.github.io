@@ -1,5 +1,5 @@
 # My 2026 Goals
->Jan 14, 2026
+>Published Jan 14, 2026, [revision history](https://github.com/vstlo/vstlo.github.io/commits/main/2026-goals.md)
 
 - Improve my online privacy (no more using my government name on public accounts)
 - Read a few books (listed below)
