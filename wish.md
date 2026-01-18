@@ -19,4 +19,4 @@ Inspired by [Make a /wish page!](https://taylor.town/wish-manifesto)
 
 - iPhone mount for MacBook to use as camera
 
-[_Edit on GitHub_](https://github.com/vstlo/vstlo.github.io/blob/main/wish.md)
+[_Edit on GitHub_](https://github.com/vstlo/vstlo.github.io/edit/main/wish.md)
