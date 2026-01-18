@@ -1,3 +1,6 @@
+> [!WARNING]  
+> This page is only a placeholder, do not count on the accuracy of its content until this banner is removed.
+
 Inspired by [Make a /wish page!](https://taylor.town/wish-manifesto)
 
 - 1.25" adjustable brown leather belt (replacing my old [Anson](https://ansonbelt.com))
@@ -15,3 +18,5 @@ Inspired by [Make a /wish page!](https://taylor.town/wish-manifesto)
 ### Vibes (work in progress gift ideas)
 
 - iPhone mount for MacBook to use as camera
+
+[_Edit on GitHub_](https://github.com/vstlo/vstlo.github.io/blob/main/wish.md)
