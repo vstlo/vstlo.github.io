@@ -18,7 +18,7 @@
 - Learn video editing via davinci resolve
 - Learn to knit
 - Learn storytelling through videography (e.g. FPV drone) and photography
-- Learn synth
+- Learn synth (see [Welcome to Synth on Vimeo](https://vimeo.com/766323945) and [Learning Synths by Ableton](https://learningsynths.ableton.com) to get started)
 - Make things with your hands
 - Participate in distributed systems reading group
 - Get better at leetcode
