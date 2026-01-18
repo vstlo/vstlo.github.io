@@ -78,4 +78,5 @@
 
 >"Remembering you make the life you want. You have choices. You become who you want to become." – me
 
+---
 [_Edit on GitHub_](https://github.com/vstlo/vstlo.github.io/edit/main/2026-goals.md)
