@@ -4,6 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Username Generator</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%239e4d2f'/%3E%3Cstop offset='1' stop-color='%233e6d6a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%23f6f0e8'/%3E%3Cpath d='M18 40c6-12 22-12 28 0' fill='none' stroke='url(%23g)' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='26' cy='24' r='4' fill='url(%23g)'/%3E%3Ccircle cx='38' cy='24' r='4' fill='url(%23g)'/%3E%3C/svg%3E"
+    />
     <style>
       :root {
         --bg: #f6f0e8;
@@ -169,11 +174,12 @@
         display: inline-flex;
         align-items: center;
       }
-      .actions {
+      .header-actions {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 10px;
         flex-wrap: wrap;
+        justify-content: flex-end;
       }
       button {
         background: var(--accent);
@@ -186,6 +192,26 @@
       }
       button.secondary {
         background: var(--accent-2);
+      }
+      .text-button {
+        background: #f1e8dc;
+        color: var(--accent-2);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 8px 12px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .icon-action {
+        width: 34px;
+        height: 34px;
+        padding: 0;
+        border-radius: 10px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
       }
       .icon-button {
         background: #f1e8dc;
@@ -220,7 +246,6 @@
         font-size: 16px;
       }
       .output {
-        min-height: 180px;
         font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
         background: #fff;
         border: 1px solid var(--border);
@@ -262,6 +287,14 @@
         color: var(--muted);
         font-size: 12px;
       }
+      .footer a {
+        color: var(--accent-2);
+        text-decoration: none;
+        margin-left: 6px;
+      }
+      .footer a:hover {
+        text-decoration: underline;
+      }
       @media (max-width: 720px) {
         header {
           padding: 22px 16px 6px;
@@ -276,13 +309,19 @@
         .grid.three {
           grid-template-columns: 1fr;
         }
-        .actions {
-          flex-direction: column;
-          align-items: stretch;
-        }
-        .actions button {
+        .header-actions {
           width: 100%;
-          padding: 12px 18px;
+          justify-content: space-between;
+        }
+        .header-actions .pill {
+          order: 3;
+        }
+        .text-button {
+          padding: 10px 12px;
+        }
+        .icon-action {
+          width: 38px;
+          height: 38px;
         }
         .section-header {
           flex-direction: column;
@@ -312,14 +351,26 @@
       <section class="panel">
         <div class="section-header">
           <h2>Generated usernames</h2>
-          <span class="pill" id="resultCountLabel">0 results</span>
+          <div class="header-actions">
+            <button id="generate" class="icon-button icon-action" type="button" aria-label="Regenerate usernames">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" aria-hidden="true">
+                <path d="M3 12a9 9 0 0 1 15.36-5.36"></path>
+                <path d="M18 3v6h-6"></path>
+                <path d="M21 12a9 9 0 0 1-15.36 5.36"></path>
+                <path d="M6 21v-6h6"></path>
+              </svg>
+            </button>
+            <button id="copy" class="text-button" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" aria-hidden="true">
+                <path d="M10 13a5 5 0 0 0 7.07 0l2.83-2.83a5 5 0 0 0-7.07-7.07l-1.41 1.41"></path>
+                <path d="M14 11a5 5 0 0 0-7.07 0L4.1 13.83a5 5 0 0 0 7.07 7.07l1.41-1.41"></path>
+              </svg>
+              <span id="copyLabel">Copy URL</span>
+            </button>
+            <span class="pill" id="resultCountLabel">0 results</span>
+          </div>
         </div>
         <div class="output" id="output"></div>
-        <div class="actions" style="margin-top: 16px;">
-          <button id="generate">Regenerate</button>
-          <button id="copy" class="secondary">Copy URL</button>
-          <span class="hint" id="status"></span>
-        </div>
       </section>
 
       <section class="panel grid">
@@ -351,17 +402,17 @@
           </div>
           <div>
             <div class="label-row">
-              <label for="cEdgy">Edgy consonants</label>
+              <label for="cUnusual">Unusual consonants</label>
               <button
                 class="info-button"
                 type="button"
-                aria-label="Edgy consonants help"
-                data-tip="These letters add an edgy score when present."
+                aria-label="Unusual consonants help"
+                data-tip="These letters add a uniqueness boost when present."
               >
                 i
               </button>
             </div>
-            <input id="cEdgy" type="text" placeholder="Enter edgy set" />
+            <input id="cUnusual" type="text" placeholder="Enter unusual set" />
           </div>
           <div>
             <div class="label-row">
@@ -432,24 +483,28 @@
             </div>
             <input id="starterBias" type="number" min="0" max="1" step="0.05" placeholder="Enter probability" />
           </div>
-          <div>
-            <div class="label-row">
-              <label for="edgyStartBias">Edgy early bias multiplier</label>
-              <button
-                class="info-button"
-                type="button"
-                aria-label="Edgy early bias help"
-                data-tip="Weight edgy consonants higher at the first position."
-              >
-                i
-              </button>
+            <div>
+              <div class="label-row">
+                <label for="edgyStartBias">Unusual early bias multiplier</label>
+                <button
+                  class="info-button"
+                  type="button"
+                  aria-label="Unusual early bias help"
+                  data-tip="Weight unusual consonants higher at the first position."
+                >
+                  i
+                </button>
+              </div>
+              <input id="edgyStartBias" type="number" min="1" max="6" step="1" placeholder="Enter multiplier" />
             </div>
-            <input id="edgyStartBias" type="number" min="1" max="6" step="1" placeholder="Enter multiplier" />
-          </div>
+
         </div>
       </section>
 
-      <div class="footer">Settings live in the URL so you can bookmark a favorite setup.</div>
+      <div class="footer">
+        Settings live in the URL so you can bookmark a favorite setup.
+        <a href="https://github.com/vstlo/vstlo.github.io/blob/main/tools/username-generator.html">Edit on GitHub</a>
+      </div>
     </main>
 
     <script>
@@ -459,7 +514,7 @@
         templates: $("templates"),
         vowels: $("vowels"),
         cCommon: $("cCommon"),
-        cEdgy: $("cEdgy"),
+        cUnusual: $("cUnusual"),
         starters: $("starters"),
         clusters: $("clusters"),
         resultCount: $("resultCount"),
@@ -469,7 +524,7 @@
         edgyStartBias: $("edgyStartBias"),
       };
 
-      const statusEl = $("status");
+      const copyLabel = $("copyLabel");
       const outputEl = $("output");
       const resultCountLabel = $("resultCountLabel");
 
@@ -483,7 +538,7 @@
         "templates",
         "vowels",
         "cCommon",
-        "cEdgy",
+        "cUnusual",
         "starters",
         "clusters",
         "resultCount",
@@ -493,10 +548,19 @@
         "edgyStartBias",
       ];
 
-      const setStatus = (message) => {
-        statusEl.textContent = message;
+      const listFields = new Set([
+        "templates",
+        "vowels",
+        "cCommon",
+        "cUnusual",
+        "starters",
+        "clusters",
+      ]);
+
+      const setCopyLabel = (message) => {
+        copyLabel.textContent = message;
         if (!message) return;
-        setTimeout(() => { statusEl.textContent = ""; }, 2000);
+        setTimeout(() => { copyLabel.textContent = "Copy URL"; }, 2400);
       };
 
       const renderEmpty = (message) => {
@@ -509,7 +573,14 @@
         let hasParams = false;
         paramKeys.forEach((key) => {
           if (params.has(key)) {
-            fields[key].value = params.get(key);
+            const rawValue = params.get(key);
+            if (listFields.has(key)) {
+              fields[key].value = key === "templates"
+                ? listFromText(rawValue).join(",")
+                : listFromText(rawValue).join(" ");
+            } else {
+              fields[key].value = rawValue;
+            }
             hasParams = true;
           } else {
             fields[key].value = "";
@@ -522,23 +593,28 @@
         const params = new URLSearchParams();
         paramKeys.forEach((key) => {
           const value = fields[key].value.trim();
-          if (value) params.set(key, value);
+          if (!value) return;
+          if (listFields.has(key)) {
+            params.set(key, listFromText(value).join(" "));
+          } else {
+            params.set(key, value);
+          }
         });
         const query = params.toString();
         const url = query ? `${location.pathname}?${query}` : location.pathname;
         history.replaceState(null, "", url);
       };
 
-      const pickConsonant = (common, edgy, edgyStartBias, i = 0) => {
-        const pool = (i === 0 ? edgy.repeat(edgyStartBias) : edgy) + common;
+      const pickConsonant = (common, unusual, unusualStartBias, i = 0) => {
+        const pool = (i === 0 ? unusual.repeat(unusualStartBias) : unusual) + common;
         return pool[Math.floor(Math.random() * pool.length)];
       };
 
-      const render = (template, vowels, common, edgy, starters, edgyStartBias, starterBias) => {
+      const render = (template, vowels, common, unusual, starters, unusualStartBias, starterBias) => {
         const chars = [];
         [...template].forEach((ch, i) => {
           if (ch === "C") {
-            chars.push(pickConsonant(common, edgy, edgyStartBias, i));
+            chars.push(pickConsonant(common, unusual, unusualStartBias, i));
           } else {
             chars.push(vowels[Math.floor(Math.random() * vowels.length)]);
           }
@@ -551,9 +627,9 @@
         return out;
       };
 
-      const score = (name, starters, clusters) => {
+      const score = (name, starters, clusters, unusualSet) => {
         let sc = 0;
-        if (/[vzxq]/.test(name)) sc += 2;
+        if (unusualSet && new RegExp(`[${unusualSet}]`).test(name)) sc += 2;
         if (starters.includes(name[0])) sc += 1;
         if (clusters.some((cl) => name.includes(cl))) sc += 1;
         if (/(.)\1\1/.test(name)) sc -= 5;
@@ -566,7 +642,7 @@
         const templates = listFromText(fields.templates.value.toUpperCase());
         const vowels = listFromText(fields.vowels.value.toLowerCase()).join("");
         const common = listFromText(fields.cCommon.value.toLowerCase()).join("");
-        const edgy = listFromText(fields.cEdgy.value.toLowerCase()).join("");
+        const unusual = listFromText(fields.cUnusual.value.toLowerCase()).join("");
         const starters = listFromText(fields.starters.value.toLowerCase()).join("");
         const clusters = listFromText(fields.clusters.value.toLowerCase());
 
@@ -574,7 +650,7 @@
         const triesRaw = fields.tries.value.trim();
         const minScoreRaw = fields.minScore.value.trim();
         const starterBiasRaw = fields.starterBias.value.trim();
-        const edgyStartBiasRaw = fields.edgyStartBias.value.trim();
+        const unusualStartBiasRaw = fields.edgyStartBias.value.trim();
 
         if (
           !templates.length ||
@@ -584,7 +660,7 @@
           !triesRaw ||
           !minScoreRaw ||
           !starterBiasRaw ||
-          !edgyStartBiasRaw
+          !unusualStartBiasRaw
         ) {
           renderEmpty("Fill out all fields or load a saved URL to generate.");
           return;
@@ -594,28 +670,31 @@
         const tries = Number(triesRaw);
         const minScore = Number(minScoreRaw);
         const starterBias = Number(starterBiasRaw);
-        const edgyStartBias = Math.max(1, Math.round(Number(edgyStartBiasRaw)));
+        const unusualStartBias = Math.max(1, Math.round(Number(unusualStartBiasRaw)));
 
         if (
           !Number.isFinite(resultCount) ||
           !Number.isFinite(tries) ||
           !Number.isFinite(minScore) ||
           !Number.isFinite(starterBias) ||
-          !Number.isFinite(edgyStartBias)
+          !Number.isFinite(unusualStartBias)
         ) {
           renderEmpty("Check your numeric values, then try again.");
           return;
         }
+
+        const unusualSet = unusual
+          .replace(/[-\\^$*+?.()|[\]{}]/g, "\\$&");
 
         const seen = new Set();
         const out = [];
 
         for (let i = 0; i < tries; i += 1) {
           const template = templates[Math.floor(Math.random() * templates.length)];
-          const cand = render(template, vowels, common, edgy, starters, edgyStartBias, starterBias);
+          const cand = render(template, vowels, common, unusual, starters, unusualStartBias, starterBias);
           if (seen.has(cand)) continue;
           seen.add(cand);
-          if (score(cand, starters, clusters) >= minScore) {
+          if (score(cand, starters, clusters, unusualSet) >= minScore) {
             out.push(cand);
             if (out.length >= resultCount) break;
           }
@@ -667,9 +746,9 @@
         updateParams();
         try {
           await navigator.clipboard.writeText(location.href);
-          setStatus("URL copied.");
+          setCopyLabel("URL copied!");
         } catch (err) {
-          setStatus("Copy failed. You can manually copy from the address bar.");
+          setCopyLabel("Copy failed");
         }
       });
 
@@ -680,10 +759,10 @@
         try {
           await navigator.clipboard.writeText(name);
           button.classList.add("copied");
-          setStatus(`Copied ${name}.`);
+          setCopyLabel("Copied!");
           setTimeout(() => { button.classList.remove("copied"); }, 900);
         } catch (err) {
-          setStatus("Copy failed.");
+          setCopyLabel("Copy failed");
         }
       });
 
