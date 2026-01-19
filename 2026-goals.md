@@ -69,6 +69,7 @@
 
 ### Destinations
 - Japan
+- Bariloche
 - More South & Central America
 
 ### Ideas going into 2026
