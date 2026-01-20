@@ -1,6 +1,6 @@
 ## Blogroll
 
-> Blogroll as: ~OPML~ | ~JSON~ (_Coming Soon_)
+> Blogroll as: ~OPML~ - ~JSON~ (_Coming Soon_)
 
 - [manton.org](https://www.manton.org)
 - [isaacgood.com](https://www.isaacgood.com/)
