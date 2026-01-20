@@ -1,5 +1,7 @@
 ## Blogroll
 
+> Blogroll as: ~OPML~ | ~JSON~ (_Coming Soon_)
+
 - [isaacgood.com](https://www.isaacgood.com/)
 - [jg.gg](https://jg.gg/)
 - [kalzumeus.com](https://www.kalzumeus.com/)
