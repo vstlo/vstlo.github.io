@@ -4,6 +4,7 @@
 * [wish](/wish)
 * [tools](/tools)
 * [blogroll](/blogroll)
+* [bookshelf](/bookshelf)
 
 ---
 [_Edit on GitHub_](https://github.com/vstlo/vstlo.github.io/edit/main/README.md)
