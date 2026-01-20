@@ -95,3 +95,6 @@
 - [whereisjessica.carrd.co](https://whereisjessica.carrd.co/)
 - [zenorocha.com](https://zenorocha.com/)
 - [zoltan.co](https://zoltan.co/)
+
+---
+[_Edit on GitHub_](https://github.com/vstlo/vstlo.github.io/edit/main/blogroll.md)
