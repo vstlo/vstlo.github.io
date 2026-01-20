@@ -8,7 +8,6 @@
 - Refactoring UI — Adam Wathan & Steve Schoger
 - Operating Systems: Three Easy Pieces — Remzi H. Arpaci-Dusseau & Andrea C. Arpaci-Dusseau
 - The Jazz Standards: A Guide to the Repertoire — Ted Gioia
-- The Staff Engineer's Path: A Guide for Individual Contributors Navigating Growth and Change — Tanya Reilly
 - Mathematics: Its Content, Methods and Meaning — A. D. Aleksandrov, A. N. Kolmogorov, M. A. Lavrent'ev (eds.)
 - Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems — Martin Kleppmann
 - Understanding Distributed Systems: What every developer should know about large distributed applications — Roberto Vitillo
