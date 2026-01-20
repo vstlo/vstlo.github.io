@@ -49,7 +49,7 @@
 - Track numeric goal progress (e.g. runs per week) in a data driven way like Numbers
 - Maintain a bucket list
 
-### Books
+### Books (see [bookshelf](/bookshelf))
 - Practical UI
 - Refactoring UI
 - OS 3 easy steps
