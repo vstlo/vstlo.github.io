@@ -2,6 +2,7 @@
 
 > Blogroll as: ~OPML~ | ~JSON~ (_Coming Soon_)
 
+- [manton.org](https://www.manton.org)
 - [isaacgood.com](https://www.isaacgood.com/)
 - [jg.gg](https://jg.gg/)
 - [kalzumeus.com](https://www.kalzumeus.com/)
