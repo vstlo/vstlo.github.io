@@ -16,7 +16,7 @@ Inspired by [Make a /wish page!](https://taylor.town/wish-manifesto)
 - I work by [Tugboat Printshop](https://www.tugboatprintshop.com)
 - Soldering helping hands
 - Placemat for working on drone parts / electronics
-- $40 [RadioMaster Ranger Nano](https://radiomasterrc.com/products/ranger-nano-2-4ghz-elrs-module?variant=46486353182912)
+- $40 [RadioMaster Ranger Nano](https://radiomasterrc.com/products/ranger-nano-2-4ghz-elrs-module?variant=46486353182912) ([review](https://oscarliang.com/radiomaster-ranger-micro-nano-expresslrs-module/))
 
 ### Vibes (work in progress gift ideas)
 
