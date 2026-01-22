@@ -2,11 +2,11 @@
 
 ### Reading
 - The Staff Engineer's Path: A Guide for Individual Contributors Navigating Growth and Change — Tanya Reilly
+- Operating Systems: Three Easy Pieces — Remzi H. Arpaci-Dusseau & Andrea C. Arpaci-Dusseau (via [book club](https://eatonphil.com/2026-ostep.html))
 
 ### Next
 - Practical UI (2nd edition) — Adham Dannaway
 - Refactoring UI — Adam Wathan & Steve Schoger
-- Operating Systems: Three Easy Pieces — Remzi H. Arpaci-Dusseau & Andrea C. Arpaci-Dusseau
 - The Jazz Standards: A Guide to the Repertoire — Ted Gioia
 - Mathematics: Its Content, Methods and Meaning — A. D. Aleksandrov, A. N. Kolmogorov, M. A. Lavrent'ev (eds.)
 - Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems — Martin Kleppmann
