@@ -12,7 +12,7 @@ Inspired by [Make a /wish page!](https://taylor.town/wish-manifesto)
 - Adventure SUV
 - Packable kayak
 - DJI Osmo (or similar handheld stablized video for capturingt travel moments)
-- [Flywoo Explorer LR 4 DJI O4 PRO](https://flywoo.net/products/explorer-lr-4-o4-pro-sub250-4k-1080p-micro-long-range)
+- [Flywoo Explorer LR 4 DJI O4 PRO](https://flywoo.net/products/explorer-lr-4-o4-pro-sub250-4k-1080p-micro-long-range) + batteries (TBD)
 - I work by [Tugboat Printshop](https://www.tugboatprintshop.com)
 - Soldering helping hands
 - Placemat for working on drone parts / electronics
