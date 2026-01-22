@@ -15,14 +15,14 @@ Inspired by [Make a /wish page!](https://taylor.town/wish-manifesto)
 - [Flywoo Explorer LR 4 DJI O4 PRO](https://flywoo.net/products/explorer-lr-4-o4-pro-sub250-4k-1080p-micro-long-range) + batteries (TBD)
 - I work by [Tugboat Printshop](https://www.tugboatprintshop.com)
 - Soldering helping hands
-- Placemat for working on drone parts / electronics
+- Placemat for working on drone parts / electronics ([inspo](https://www.reddit.com/r/fpv/comments/14ucbh4/workbench_storage_recommendations/))
 - $40 [RadioMaster Ranger Nano](https://radiomasterrc.com/products/ranger-nano-2-4ghz-elrs-module?variant=46486353182912) ([review](https://oscarliang.com/radiomaster-ranger-micro-nano-expresslrs-module/))
 
 ### Vibes (work in progress gift ideas)
 
 - iPhone mount for MacBook to use as camera
 - Better iPhone shower case
-- Toolbox for all tiny screws and electronic repair eq.
+- Toolbox for all tiny screws and electronic repair equipment ([inspo](https://www.reddit.com/r/fpv/comments/14ucbh4/workbench_storage_recommendations/))
 - Anker battery bank eg https://a.co/d/6B7UaEy (output enough to charge LiPo)
 - crampons
 - hiking poles
