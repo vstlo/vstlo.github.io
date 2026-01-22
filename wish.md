@@ -23,6 +23,7 @@ Inspired by [Make a /wish page!](https://taylor.town/wish-manifesto)
 - iPhone mount for MacBook to use as camera
 - Better iPhone shower case
 - Toolbox for all tiny screws and electronic repair eq.
+- Anker battery bank eg https://a.co/d/6B7UaEy (output enough to charge LiPo)
 
 ---
 [_Edit on GitHub_](https://github.com/vstlo/vstlo.github.io/edit/main/wish.md)
