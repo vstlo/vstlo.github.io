@@ -16,6 +16,7 @@ Inspired by [Make a /wish page!](https://taylor.town/wish-manifesto)
 - I work by [Tugboat Printshop](https://www.tugboatprintshop.com)
 - Soldering helping hands
 - Placemat for working on drone parts / electronics
+- Radiomaster backpack for Pocket
 
 ### Vibes (work in progress gift ideas)
 
