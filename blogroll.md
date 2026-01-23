@@ -1,7 +1,10 @@
 ## Blogroll
 
+well, actually more of a inspo page of web i like.
+
 > Blogroll as: ~OPML~ - ~JSON~ (_Coming Soon_)
 
+- https://fromjason.xyz/ - i love the gothic design
 - [manton.org](https://www.manton.org)
 - [isaacgood.com](https://www.isaacgood.com/)
 - [jg.gg](https://jg.gg/)
