@@ -24,6 +24,7 @@
 - Puerto Rico: A National History — Jorell Meléndez-Badillo
 - Sam Thayer's Field Guide to Edible Wild Plants of Eastern and Central North America — Samuel Thayer
 - In the Circle of Ancient Trees: Our Oldest Trees and the Stories They Tell — Valerie Trouet (illus. Blaze Cyan)
+- Free Gifts (found via [TikTok](https://www.tiktok.com/t/ZThD8sfog/))
 
 ---
 [_Edit on GitHub_](https://github.com/vstlo/vstlo.github.io/edit/main/bookshelf.md)
