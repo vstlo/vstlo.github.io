@@ -27,6 +27,7 @@ Inspired by [Make a /wish page!](https://taylor.town/wish-manifesto)
 - Anker battery bank eg https://a.co/d/6B7UaEy (output enough to charge LiPo)
 - crampons
 - hiking poles
+- revamp office (monitors, usb-c dock, chair, etc)
 
 ---
 [_Edit on GitHub_](https://github.com/vstlo/vstlo.github.io/edit/main/wish.md)
