@@ -18,6 +18,7 @@ Inspired by [Make a /wish page!](https://taylor.town/wish-manifesto)
 - Placemat for working on drone parts / electronics ([inspo](https://www.reddit.com/r/fpv/comments/14ucbh4/workbench_storage_recommendations/))
 - $40 [RadioMaster Ranger Nano](https://radiomasterrc.com/products/ranger-nano-2-4ghz-elrs-module?variant=46486353182912) ([review](https://oscarliang.com/radiomaster-ranger-micro-nano-expresslrs-module/))
 - Precision hot glue gun
+- $750 [HDZero Goggle 2](https://hdzero.us/products/hdzero-goggle-2?variant=46146138243221)
 
 ### Vibes (work in progress gift ideas)
 
