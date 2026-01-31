@@ -12,7 +12,7 @@ Inspired by [Make a /wish page!](https://taylor.town/wish-manifesto)
 - Adventure SUV
 - Packable kayak
 - [Flywoo Explorer LR 4 DJI O4 PRO](https://flywoo.net/products/explorer-lr-4-o4-pro-sub250-4k-1080p-micro-long-range) + batteries (TBD)
-- I work by [Tugboat Printshop](https://www.tugboatprintshop.com)
+- A piece by [Tugboat Printshop](https://www.tugboatprintshop.com)
 - Soldering helping hands
 - Placemat for working on drone parts / electronics ([inspo](https://www.reddit.com/r/fpv/comments/14ucbh4/workbench_storage_recommendations/))
 - $40 [RadioMaster Ranger Nano](https://radiomasterrc.com/products/ranger-nano-2-4ghz-elrs-module?variant=46486353182912) ([review](https://oscarliang.com/radiomaster-ranger-micro-nano-expresslrs-module/))
@@ -29,6 +29,7 @@ Inspired by [Make a /wish page!](https://taylor.town/wish-manifesto)
 - hiking poles
 - revamp office (monitors, usb-c dock, chair, etc)
 - DJI Osmo (or similar handheld stablized video for capturingt travel moments)
+- zojirushi rice cooker
 
 ---
 [_Edit on GitHub_](https://github.com/vstlo/vstlo.github.io/edit/main/wish.md)
