@@ -18,6 +18,8 @@ Inspired by [Make a /wish page!](https://taylor.town/wish-manifesto)
 - $40 [RadioMaster Ranger Nano](https://radiomasterrc.com/products/ranger-nano-2-4ghz-elrs-module?variant=46486353182912) ([review](https://oscarliang.com/radiomaster-ranger-micro-nano-expresslrs-module/))
 - Precision hot glue gun
 - $750 [HDZero Goggle 2](https://hdzero.us/products/hdzero-goggle-2?variant=46146138243221)
+- [Air65 II Brushless Whoop Quadcopter
+Champion](https://betafpv.com/products/air65-ii-brushless-whoop-quadcopter?variant=43035791294598)
 
 ### Vibes (work in progress gift ideas)
 
