@@ -3,7 +3,7 @@
 Inspired by [Make a /wish page!](https://taylor.town/wish-manifesto)
 
 - 1.25" adjustable brown leather belt (replacing my old [Anson](https://ansonbelt.com))
-- 3D printer
+- 3D printer (probably [Bambo Lab P2S](https://bambulab.com/en-us/p2s))
 - Precision (electric?) screwdriver set for electronics (with attachments for all types of screw heads I'd face in FPV or micro electronics)
 - Running headband
 - Mac Mini for home server
